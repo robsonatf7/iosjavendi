@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SearchTableViewController.h
 //  JaVendi
 //
 //  Created by Robson Ribeiro on 9/2/14.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface SearchTableViewController : UITableViewController
+
+- (IBAction)cancel:(id)sender;
 
 @end
