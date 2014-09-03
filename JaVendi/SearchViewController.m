@@ -8,9 +8,10 @@
 
 #import "SearchViewController.h"
 
-@interface SearchViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
+@interface SearchViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 @property (strong, nonatomic) NSArray *options;
 @property (strong, nonatomic) NSMutableArray *parametersArray;
+@property (strong, nonatomic) NSMutableArray *pickerViewData;
 
 // Picker View
 @property (weak, nonatomic) IBOutlet UIView *fadeView;
@@ -46,6 +47,14 @@
     for (int i = 0; i < 4; i++) {
         [self.parametersArray insertObject:@"Selecionar" atIndex:i];
     }
+    
+    self.pickerView.delegate = self;
+    self.pickerView.dataSource = self;
+    
+    // Adding gesture recognizer on Fade View to dismiss it on click
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidePickerView)];
+    [singleTap setNumberOfTapsRequired:1];
+    [self.fadeView addGestureRecognizer:singleTap];
 }
 
 #pragma mark - UITableView DataSource
@@ -104,7 +113,21 @@
         } else {
             switch (indexPath.row) {
                 case 1:
-                    [self showPickerView];
+                    [self setupPickerViewDataForType:PickerViewValueTypeCategories];
+                    [self comeInPickerViewAnimation];
+                    self.pickerView.tag = 1;
+                    break;
+                    
+                case 2:
+                    [self setupPickerViewDataForType:PickerViewValueTypePrices];
+                    [self comeInPickerViewAnimation];
+                    self.pickerView.tag = 2;
+                    break;
+                    
+                case 3:
+                    [self setupPickerViewDataForType:PickerViewValueTypePrices];
+                    [self comeInPickerViewAnimation];
+                    self.pickerView.tag = 3;
                     break;
                     
                 default:
@@ -138,40 +161,117 @@
 
 #pragma mark - Picker View
 
+- (void)setupPickerViewDataForType:(PickerViewValueType)valueType
+{
+    self.pickerViewData = [NSMutableArray array];
+    if(valueType == PickerViewValueTypePrices) {
+        for (int i = 1; i <= 10; i++) [self.pickerViewData addObject:[NSString stringWithFormat:@"R$ %i", (i * 100)]];
+    } else if (valueType ==  PickerViewValueTypeCategories) {
+        [self.pickerViewData addObject:@"Informática"];
+        [self.pickerViewData addObject:@"Jogos e Consoles"];
+    }
+    [self.pickerView reloadAllComponents];
+}
+
 - (IBAction)cancelPickerView:(id)sender {
+    [self hidePickerView];
 }
 
 - (IBAction)donePickerView:(id)sender {
+    id object = [self.pickerViewData objectAtIndex:[self.pickerView selectedRowInComponent:0]];
+    [self.parametersArray replaceObjectAtIndex:self.pickerView.tag withObject:object];
+    [self.tableView reloadData];
+    [self hidePickerView];
+}
+
+#pragma mark - PickerView Delegate
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return [self.pickerViewData count];
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return [self.pickerViewData objectAtIndex:row];
+}
+
+#pragma mark - PickerView Animation
+
+- (void)comeInPickerViewAnimation
+{
+    self.fadeView.frame = CGRectMake(0, 0, self.fadeView.frame.size.width, self.fadeView.frame.size.height);
+    
+    [UIView beginAnimations:nil context:@selector(showPickerView)];
+	[UIView setAnimationDelegate:self];
+	[UIView setAnimationDidStopSelector:@selector(animationFinished:finished:context:)];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+	[UIView setAnimationDuration:0.2];
+    self.fadeView.backgroundColor =[[UIColor blackColor] colorWithAlphaComponent:0.5f];
+	[UIView commitAnimations];
+}
+
+- (void)animationFinished:(NSString*)animationID finished:(BOOL)finished context:(void*)context
+{
+	if (context) {
+		[self performSelector:context];
+	}
 }
 
 - (void)showPickerView
 {
-    [UIView animateWithDuration:0.2f delay:0.f options:UIViewAnimationOptionCurveEaseIn animations:^{
-        [self.view bringSubviewToFront:self.fadeView];
-        self.fadeView.alpha = 0.5f;
-    } completion:^(BOOL finished) {
-        [UIView beginAnimations:nil context:nil];
-        [UIView setAnimationDuration:0.3f];
-        self.pickerViewHolder.frame = CGRectMake(0,
-                                                 375,
-                                                 self.pickerViewHolder.frame.size.width,
-                                                 self.pickerViewHolder.frame.size.height);
-        [self.view bringSubviewToFront:self.pickerViewHolder];
-        [UIView commitAnimations];
-//        [UIView animateWithDuration:105.2f delay:0.f options:UIViewAnimationOptionCurveEaseIn animations:^{
-//            self.pickerViewHolder.frame = CGRectMake(0,
-//                                                     375,
-//                                                     self.pickerViewHolder.frame.size.width,
-//                                                     self.pickerViewHolder.frame.size.height);
-//            [self.view bringSubviewToFront:self.pickerViewHolder];
-//        } completion:nil];
-    }];
+    [UIView beginAnimations:nil context:nil];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+	[UIView setAnimationDuration:0.3f];
+//    self.pickerViewHolder.frame = CGRectMake(0,
+//                                             338,
+//                                             self.pickerViewHolder.frame.size.width,
+//                                             self.pickerViewHolder.frame.size.height);
+    self.pickerViewHolder.frame = CGRectMake(0,
+                                             self.view.frame.size.height - self.pickerViewHolder.frame.size.height,
+                                             self.pickerViewHolder.frame.size.width,
+                                             self.pickerViewHolder.frame.size.height);
 
+	[UIView commitAnimations];
 }
 
 - (void)hidePickerView
 {
+    [UIView beginAnimations:nil context:@selector(comeOutPickerViewAnimation)];
+	[UIView setAnimationDelegate:self];
+	[UIView setAnimationDidStopSelector:@selector(animationFinished:finished:context:)];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+	[UIView setAnimationDuration:0.2];
+//    self.pickerViewHolder.frame = CGRectMake(0,
+//                                             568,
+//                                             self.pickerViewHolder.frame.size.width,
+//                                             self.pickerViewHolder.frame.size.height);
+    self.pickerViewHolder.frame = CGRectMake(0,
+                                             self.view.frame.size.height,
+                                             self.pickerViewHolder.frame.size.width,
+                                             self.pickerViewHolder.frame.size.height);
+	[UIView commitAnimations];
+}
+
+- (void)comeOutPickerViewAnimation
+{
+    [UIView beginAnimations:nil context:nil];
+	[UIView setAnimationDelegate:self];
+	[UIView setAnimationDidStopSelector:@selector(animationFinished:finished:context:)];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+	[UIView setAnimationDuration:0.2];
+    self.fadeView.backgroundColor = [UIColor clearColor];
+	[UIView commitAnimations];
     
+    self.fadeView.frame = CGRectMake(0,
+                                     self.view.frame.size.height,
+                                     self.fadeView.frame.size.width,
+                                     self.fadeView.frame.size.height);
 }
 
 @end
