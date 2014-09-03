@@ -21,7 +21,7 @@
 		EA047FA419B6404300923D7C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA047FA219B6404300923D7C /* InfoPlist.strings */; };
 		EA047FA619B6404300923D7C /* JaVendiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA047FA519B6404300923D7C /* JaVendiTests.m */; };
 		EA047FB119B640D800923D7C /* MainScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA047FB019B640D800923D7C /* MainScreenViewController.m */; };
-		EA047FB419B6449F00923D7C /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA047FB319B6449F00923D7C /* SearchTableViewController.m */; };
+		EA86DBA319B752FE005AE96A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA86DBA219B752FE005AE96A /* SearchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +54,8 @@
 		EA047FA519B6404300923D7C /* JaVendiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JaVendiTests.m; sourceTree = "<group>"; };
 		EA047FAF19B640D800923D7C /* MainScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScreenViewController.h; sourceTree = "<group>"; };
 		EA047FB019B640D800923D7C /* MainScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScreenViewController.m; sourceTree = "<group>"; };
-		EA047FB219B6449F00923D7C /* SearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewController.h; sourceTree = "<group>"; };
-		EA047FB319B6449F00923D7C /* SearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewController.m; sourceTree = "<group>"; };
+		EA86DBA119B752FE005AE96A /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		EA86DBA219B752FE005AE96A /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,13 +115,13 @@
 		EA047F8019B6404300923D7C /* JaVendi */ = {
 			isa = PBXGroup;
 			children = (
+				EA047F8919B6404300923D7C /* AppDelegate.h */,
+				EA047F8A19B6404300923D7C /* AppDelegate.m */,
 				EA047F8C19B6404300923D7C /* Main.storyboard */,
 				EA047FAF19B640D800923D7C /* MainScreenViewController.h */,
 				EA047FB019B640D800923D7C /* MainScreenViewController.m */,
-				EA047FB219B6449F00923D7C /* SearchTableViewController.h */,
-				EA047FB319B6449F00923D7C /* SearchTableViewController.m */,
-				EA047F8919B6404300923D7C /* AppDelegate.h */,
-				EA047F8A19B6404300923D7C /* AppDelegate.m */,
+				EA86DBA119B752FE005AE96A /* SearchViewController.h */,
+				EA86DBA219B752FE005AE96A /* SearchViewController.m */,
 				EA047F9219B6404300923D7C /* Images.xcassets */,
 				EA047F8119B6404300923D7C /* Supporting Files */,
 			);
@@ -256,8 +256,8 @@
 			files = (
 				EA047FB119B640D800923D7C /* MainScreenViewController.m in Sources */,
 				EA047F8B19B6404300923D7C /* AppDelegate.m in Sources */,
+				EA86DBA319B752FE005AE96A /* SearchViewController.m in Sources */,
 				EA047F8719B6404300923D7C /* main.m in Sources */,
-				EA047FB419B6449F00923D7C /* SearchTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +462,7 @@
 				EA047FAB19B6404300923D7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA047FAC19B6404300923D7C /* Build configuration list for PBXNativeTarget "JaVendiTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +471,7 @@
 				EA047FAE19B6404300923D7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
