@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B13DBE7BA5874EC79377D0B2 /* libPods-JaVendi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D62C3EA8344C44FCA9085E17 /* libPods-JaVendi.a */; };
 		EA047F7B19B6404300923D7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA047F7A19B6404300923D7C /* Foundation.framework */; };
 		EA047F7D19B6404300923D7C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA047F7C19B6404300923D7C /* CoreGraphics.framework */; };
 		EA047F7F19B6404300923D7C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA047F7E19B6404300923D7C /* UIKit.framework */; };
@@ -21,6 +22,21 @@
 		EA047FA419B6404300923D7C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA047FA219B6404300923D7C /* InfoPlist.strings */; };
 		EA047FA619B6404300923D7C /* JaVendiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA047FA519B6404300923D7C /* JaVendiTests.m */; };
 		EA047FB119B640D800923D7C /* MainScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA047FB019B640D800923D7C /* MainScreenViewController.m */; };
+		EA1E846C19B7970F00322927 /* .keep in Resources */ = {isa = PBXBuildFile; fileRef = EA1E845E19B7970E00322927 /* .keep */; };
+		EA1E846D19B7970F00322927 /* icon_baby.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1E845F19B7970F00322927 /* icon_baby.png */; };
+		EA1E846E19B7970F00322927 /* icon_bike.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1E846019B7970F00322927 /* icon_bike.png */; };
+		EA1E846F19B7970F00322927 /* icon_car.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1E846119B7970F00322927 /* icon_car.png */; };
+		EA1E847019B7970F00322927 /* icon_guitar.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1E846219B7970F00322927 /* icon_guitar.png */; };
+		EA1E847119B7970F00322927 /* icon_house.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1E846319B7970F00322927 /* icon_house.png */; };
+		EA1E847219B7970F00322927 /* icon_joystick.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1E846419B7970F00322927 /* icon_joystick.png */; };
+		EA1E847319B7970F00322927 /* icon_other.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1E846519B7970F00322927 /* icon_other.png */; };
+		EA1E847419B7970F00322927 /* icon_pc.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1E846619B7970F00322927 /* icon_pc.png */; };
+		EA1E847519B7970F00322927 /* icon_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1E846719B7970F00322927 /* icon_phone.png */; };
+		EA1E847619B7970F00322927 /* icon_shirt.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1E846819B7970F00322927 /* icon_shirt.png */; };
+		EA1E847719B7970F00322927 /* icon_tablet.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1E846919B7970F00322927 /* icon_tablet.png */; };
+		EA1E847819B7970F00322927 /* icon_tv.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1E846A19B7970F00322927 /* icon_tv.png */; };
+		EA1E847919B7970F00322927 /* iphone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA1E846B19B7970F00322927 /* iphone.jpg */; };
+		EA34957119B8E5C20054BC7C /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA34957019B8E5C20054BC7C /* MenuTableViewController.m */; };
 		EA86DBA319B752FE005AE96A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA86DBA219B752FE005AE96A /* SearchViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B825238A874642FD82886FA9 /* Pods-JaVendi.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JaVendi.xcconfig"; path = "Pods/Pods-JaVendi.xcconfig"; sourceTree = "<group>"; };
+		D62C3EA8344C44FCA9085E17 /* libPods-JaVendi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JaVendi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA047F7719B6404300923D7C /* JaVendi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JaVendi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA047F7A19B6404300923D7C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EA047F7C19B6404300923D7C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -54,6 +72,22 @@
 		EA047FA519B6404300923D7C /* JaVendiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JaVendiTests.m; sourceTree = "<group>"; };
 		EA047FAF19B640D800923D7C /* MainScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScreenViewController.h; sourceTree = "<group>"; };
 		EA047FB019B640D800923D7C /* MainScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScreenViewController.m; sourceTree = "<group>"; };
+		EA1E845E19B7970E00322927 /* .keep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .keep; sourceTree = "<group>"; };
+		EA1E845F19B7970F00322927 /* icon_baby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_baby.png; sourceTree = "<group>"; };
+		EA1E846019B7970F00322927 /* icon_bike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_bike.png; sourceTree = "<group>"; };
+		EA1E846119B7970F00322927 /* icon_car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_car.png; sourceTree = "<group>"; };
+		EA1E846219B7970F00322927 /* icon_guitar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_guitar.png; sourceTree = "<group>"; };
+		EA1E846319B7970F00322927 /* icon_house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_house.png; sourceTree = "<group>"; };
+		EA1E846419B7970F00322927 /* icon_joystick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_joystick.png; sourceTree = "<group>"; };
+		EA1E846519B7970F00322927 /* icon_other.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_other.png; sourceTree = "<group>"; };
+		EA1E846619B7970F00322927 /* icon_pc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_pc.png; sourceTree = "<group>"; };
+		EA1E846719B7970F00322927 /* icon_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_phone.png; sourceTree = "<group>"; };
+		EA1E846819B7970F00322927 /* icon_shirt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_shirt.png; sourceTree = "<group>"; };
+		EA1E846919B7970F00322927 /* icon_tablet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tablet.png; sourceTree = "<group>"; };
+		EA1E846A19B7970F00322927 /* icon_tv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_tv.png; sourceTree = "<group>"; };
+		EA1E846B19B7970F00322927 /* iphone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iphone.jpg; sourceTree = "<group>"; };
+		EA34956F19B8E5C20054BC7C /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
+		EA34957019B8E5C20054BC7C /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
 		EA86DBA119B752FE005AE96A /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		EA86DBA219B752FE005AE96A /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +100,7 @@
 				EA047F7D19B6404300923D7C /* CoreGraphics.framework in Frameworks */,
 				EA047F7F19B6404300923D7C /* UIKit.framework in Frameworks */,
 				EA047F7B19B6404300923D7C /* Foundation.framework in Frameworks */,
+				B13DBE7BA5874EC79377D0B2 /* libPods-JaVendi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +124,7 @@
 				EA047F9F19B6404300923D7C /* JaVendiTests */,
 				EA047F7919B6404300923D7C /* Frameworks */,
 				EA047F7819B6404300923D7C /* Products */,
+				B825238A874642FD82886FA9 /* Pods-JaVendi.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +144,7 @@
 				EA047F7C19B6404300923D7C /* CoreGraphics.framework */,
 				EA047F7E19B6404300923D7C /* UIKit.framework */,
 				EA047F9919B6404300923D7C /* XCTest.framework */,
+				D62C3EA8344C44FCA9085E17 /* libPods-JaVendi.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,6 +152,7 @@
 		EA047F8019B6404300923D7C /* JaVendi */ = {
 			isa = PBXGroup;
 			children = (
+				EA1E845D19B7970E00322927 /* app_images */,
 				EA047F8919B6404300923D7C /* AppDelegate.h */,
 				EA047F8A19B6404300923D7C /* AppDelegate.m */,
 				EA047F8C19B6404300923D7C /* Main.storyboard */,
@@ -122,6 +160,8 @@
 				EA047FB019B640D800923D7C /* MainScreenViewController.m */,
 				EA86DBA119B752FE005AE96A /* SearchViewController.h */,
 				EA86DBA219B752FE005AE96A /* SearchViewController.m */,
+				EA34956F19B8E5C20054BC7C /* MenuTableViewController.h */,
+				EA34957019B8E5C20054BC7C /* MenuTableViewController.m */,
 				EA047F9219B6404300923D7C /* Images.xcassets */,
 				EA047F8119B6404300923D7C /* Supporting Files */,
 			);
@@ -157,6 +197,27 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		EA1E845D19B7970E00322927 /* app_images */ = {
+			isa = PBXGroup;
+			children = (
+				EA1E845E19B7970E00322927 /* .keep */,
+				EA1E845F19B7970F00322927 /* icon_baby.png */,
+				EA1E846019B7970F00322927 /* icon_bike.png */,
+				EA1E846119B7970F00322927 /* icon_car.png */,
+				EA1E846219B7970F00322927 /* icon_guitar.png */,
+				EA1E846319B7970F00322927 /* icon_house.png */,
+				EA1E846419B7970F00322927 /* icon_joystick.png */,
+				EA1E846519B7970F00322927 /* icon_other.png */,
+				EA1E846619B7970F00322927 /* icon_pc.png */,
+				EA1E846719B7970F00322927 /* icon_phone.png */,
+				EA1E846819B7970F00322927 /* icon_shirt.png */,
+				EA1E846919B7970F00322927 /* icon_tablet.png */,
+				EA1E846A19B7970F00322927 /* icon_tv.png */,
+				EA1E846B19B7970F00322927 /* iphone.jpg */,
+			);
+			path = app_images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -164,9 +225,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EA047FA919B6404300923D7C /* Build configuration list for PBXNativeTarget "JaVendi" */;
 			buildPhases = (
+				2072006972A144F69EE53B85 /* Check Pods Manifest.lock */,
 				EA047F7319B6404300923D7C /* Sources */,
 				EA047F7419B6404300923D7C /* Frameworks */,
 				EA047F7519B6404300923D7C /* Resources */,
+				19B7369B431C4E8E932F0269 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -233,8 +296,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA1E847819B7970F00322927 /* icon_tv.png in Resources */,
+				EA1E846D19B7970F00322927 /* icon_baby.png in Resources */,
+				EA1E847419B7970F00322927 /* icon_pc.png in Resources */,
+				EA1E846C19B7970F00322927 /* .keep in Resources */,
+				EA1E847619B7970F00322927 /* icon_shirt.png in Resources */,
+				EA1E847219B7970F00322927 /* icon_joystick.png in Resources */,
+				EA1E847719B7970F00322927 /* icon_tablet.png in Resources */,
+				EA1E847119B7970F00322927 /* icon_house.png in Resources */,
+				EA1E847319B7970F00322927 /* icon_other.png in Resources */,
+				EA1E847519B7970F00322927 /* icon_phone.png in Resources */,
+				EA1E847919B7970F00322927 /* iphone.jpg in Resources */,
 				EA047F9319B6404300923D7C /* Images.xcassets in Resources */,
+				EA1E846E19B7970F00322927 /* icon_bike.png in Resources */,
 				EA047F8519B6404300923D7C /* InfoPlist.strings in Resources */,
+				EA1E846F19B7970F00322927 /* icon_car.png in Resources */,
+				EA1E847019B7970F00322927 /* icon_guitar.png in Resources */,
 				EA047F8E19B6404300923D7C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +326,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		19B7369B431C4E8E932F0269 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-JaVendi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2072006972A144F69EE53B85 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EA047F7319B6404300923D7C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -258,6 +368,7 @@
 				EA047F8B19B6404300923D7C /* AppDelegate.m in Sources */,
 				EA86DBA319B752FE005AE96A /* SearchViewController.m in Sources */,
 				EA047F8719B6404300923D7C /* main.m in Sources */,
+				EA34957119B8E5C20054BC7C /* MenuTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +490,7 @@
 		};
 		EA047FAA19B6404300923D7C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B825238A874642FD82886FA9 /* Pods-JaVendi.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -392,6 +504,7 @@
 		};
 		EA047FAB19B6404300923D7C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B825238A874642FD82886FA9 /* Pods-JaVendi.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

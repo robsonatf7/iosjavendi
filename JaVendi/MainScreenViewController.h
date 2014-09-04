@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainScreenViewController : UIViewController
+@interface MainScreenViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+
+@property (nonatomic, weak) IBOutlet UICollectionView *categoriesCollectionView;
 
 - (IBAction)menuButtonPressed:(id)sender;
 

@@ -7,12 +7,25 @@
 //
 
 #import "AppDelegate.h"
+#import <MFSideMenu/MFSideMenu.h>
+
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    UINavigationController *mainNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MainNavigationController"];
+    
+    UINavigationController *menuNavigationController = [[UINavigationController alloc] initWithRootViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MenuTableViewController"]];
+    
+    MFSideMenuContainerViewController *menu = [MFSideMenuContainerViewController containerWithCenterViewController:mainNavigationController
+                                                                                            leftMenuViewController:menuNavigationController
+                                                                                           rightMenuViewController:nil];
+    
+    self.window.rootViewController = menu;
+    
     return YES;
 }
 							

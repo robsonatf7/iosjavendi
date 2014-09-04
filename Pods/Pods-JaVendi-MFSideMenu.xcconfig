@@ -1,0 +1,1 @@
+PODS_JAVENDI_MFSIDEMENU_OTHER_LDFLAGS = -framework QuartzCore
