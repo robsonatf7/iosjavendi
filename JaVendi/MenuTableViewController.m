@@ -6,13 +6,16 @@
 //  Copyright (c) 2014 rob. All rights reserved.
 //
 
+#import <MFSideMenu/MFSideMenu.h>
 #import "MenuTableViewController.h"
+#import "AppDelegate.h"
+#import "LoginViewController.h"
 
 @interface MenuTableViewController ()
 
-@property (nonatomic, strong)NSArray *loggedout;
+@property (nonatomic, strong) NSArray *menuArray;
 
-@property (nonatomic, strong)NSArray *loggedin;
+@property (nonatomic) BOOL session;
 
 @end
 
@@ -30,16 +33,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.loggedout = @[@"Categorias", @"Login", @"Cadastro"];
-    self.loggedin = @[@"Categorias", @"Favoritos", @"Meus anúncios", @"Perfil", @"Configurações"];
-    
+    [self reloadMenuView];
+    self.tableView.scrollEnabled = NO;    
 }
 
-- (void)didReceiveMemoryWarning
+- (void) reloadMenuView
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    self.session = appDelegate.session;
+    
+    if (self.session)
+        self.menuArray = @[@"Home", @"Favoritos", @"Meus anúncios", @"Perfil", @"Configurações"];
+    else
+        self.menuArray = @[@"Home", @"Login", @"Cadastro"];
 }
 
 #pragma mark - Table view data source
@@ -51,23 +57,79 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.loggedout count];
+    return [self.menuArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
-    cell.textLabel.text = [self.loggedout objectAtIndex:indexPath.row];
+    cell.textLabel.text = [self.menuArray objectAtIndex:indexPath.row];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    if (self.session) {
+        switch (indexPath.row) {
+            case 0:
+                {
+                    UINavigationController *home = [[UINavigationController alloc] initWithRootViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil]
+                        instantiateViewControllerWithIdentifier:@"MainScreenViewController"]];
+                    [self.menuContainerViewController setCenterViewController:home];
+                    [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
+                    break;
+                }
+            case 1:
+                
+                break;
+            case 2:
+                
+                break;
+            case 3:
+                
+                break;
+            case 4:
+                
+                break;
+            default:
+                break;
+        }
+    } else {
+        switch (indexPath.row) {
+            case 0:
+            {
+                UINavigationController *home = [[UINavigationController alloc] initWithRootViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MainScreenViewController"]];
+                [self.menuContainerViewController setCenterViewController:home];
+                [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
+                
+                break;
+            }
+            case 1:
+            {
+                [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
+                UINavigationController *login = [[UINavigationController alloc] initWithRootViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LoginViewController"]];
+                [[self.menuContainerViewController centerViewController] presentViewController:login animated:YES completion:nil];
+                
+//                UINavigationController *login = [[UINavigationController alloc] initWithRootViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LoginViewController"]];
+//                [self.menuContainerViewController setCenterViewController:login];
+//                [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
+                break;
+            }
+            case 2:
+            {
+                UINavigationController *cadastreVC = [[UINavigationController alloc] initWithRootViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"CadastreTableViewController"]];
+                [self.menuContainerViewController setCenterViewController:cadastreVC];
+                [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
+                
+                break;
+            }
+            default:
+                break;
+        }
+    }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
 }
 
 /*

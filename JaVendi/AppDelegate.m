@@ -16,6 +16,8 @@
 {
     // Override point for customization after application launch.
     
+    self.session = NO;
+    
     UINavigationController *mainNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MainNavigationController"];
     
     UINavigationController *menuNavigationController = [[UINavigationController alloc] initWithRootViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MenuTableViewController"]];
