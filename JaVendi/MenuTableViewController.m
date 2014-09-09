@@ -43,7 +43,7 @@
     self.session = appDelegate.session;
     
     if (self.session)
-        self.menuArray = @[@"Home", @"Favoritos", @"Meus anúncios", @"Perfil", @"Configurações"];
+        self.menuArray = @[@"Home", @"Novo anúncio", @"Meus anúncios", @"Favoritos", @"Perfil", @"Configurações"];
     else
         self.menuArray = @[@"Home", @"Login", @"Cadastro"];
 }
@@ -82,8 +82,12 @@
                     break;
                 }
             case 1:
-                
-                break;
+                {
+                    UINavigationController *adCadastre = [[UINavigationController alloc] initWithRootViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"AdCadastreViewController"]];
+                    [self.menuContainerViewController setCenterViewController:adCadastre];
+                    [self.menuContainerViewController toggleLeftSideMenuCompletion:nil];
+                    break;
+                }
             case 2:
                 
                 break;

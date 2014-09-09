@@ -16,7 +16,7 @@
 {
     // Override point for customization after application launch.
     
-    self.session = NO;
+    self.session = YES;
     
     UINavigationController *mainNavigationController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"MainNavigationController"];
     
